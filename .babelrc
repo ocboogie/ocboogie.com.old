@@ -1,0 +1,15 @@
+{
+  "presets": ["env", "preact"],
+  "plugins": [
+    "transform-class-properties",
+    [
+      "module-resolver",
+      {
+        "root": ["./app"],
+        "alias": {
+          "@assets": "./assets"
+        }
+      }
+    ]
+  ]
+}
