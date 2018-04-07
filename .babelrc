@@ -1,7 +1,8 @@
 {
-  "presets": ["env", "preact"],
+  "presets": ["@babel/preset-env"],
   "plugins": [
-    "transform-class-properties",
+    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-transform-react-jsx", { "pragma": "h" }],
     [
       "module-resolver",
       {
