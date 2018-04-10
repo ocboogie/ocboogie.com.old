@@ -1,6 +1,6 @@
 import { h, Component, render } from "preact";
 
-import LogoContainer from "./style";
+import { Title, NavItem } from "./style";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -17,32 +17,12 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar is-transparent">
+      <nav className="navbar is-fixed-top has-shadow">
         <div className="navbar-brand">
-          <LogoContainer className="navbar-item" href="https://bulma.io">
-            <svg
-              version="1.1"
-              width="48"
-              height="48"
-              viewBox="0 0 500 500"
-              style="enable-background:new 0 0 500 500;"
-            >
-              <circle
-                fill="none"
-                stroke="#EF5350"
-                stroke-width="40"
-                cx="250"
-                cy="250"
-                r="201.7"
-              />
-              <path
-                fill="none"
-                stroke="#03A9F4"
-                stroke-width="55"
-                d="M342.8,306.7c-31.1,50.9-98.6,67.2-149.5,36s-67.2-98.6-36-149.5s98.6-67.2,149.5-36c14.7,9,27,21.3,36,35.9"
-              />
-            </svg>
-          </LogoContainer>
+          <Title className="navbar-itema">
+            <h1 className="title">Eamon Mikulec</h1>
+            <h2 className="subtitle">Frontend web developer</h2>
+          </Title>
           <div
             onClick={this.hamburgerClickHandler}
             className={`navbar-burger burger ${
@@ -61,22 +41,33 @@ export default class Navbar extends Component {
           }`}
         >
           <div className="navbar-start">
-            <a className="navbar-item" href="https://bulma.io/">
-              About
-            </a>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link" href="/documentation/overview/start/">
-                Projects
-              </a>
-              <div className="navbar-dropdown is-boxed">
-                <a
-                  className="navbar-item"
-                  href="/documentation/overview/start/"
-                >
-                  Action Hub
-                </a>
-              </div>
-            </div>
+            <NavItem
+              className="navbar-item"
+              activeClass="is-active"
+              to="about"
+              spy={true}
+              smooth={true}
+            >
+              About me
+            </NavItem>
+            <NavItem
+              className="navbar-item"
+              activeClass="is-active"
+              to="skills"
+              spy={true}
+              smooth={true}
+            >
+              My skills
+            </NavItem>
+            <NavItem
+              className="navbar-item"
+              activeClass="is-active"
+              to="projects"
+              spy={true}
+              smooth={true}
+            >
+              My projects
+            </NavItem>
           </div>
         </div>
       </nav>

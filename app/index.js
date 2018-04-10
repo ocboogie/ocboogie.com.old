@@ -1,6 +1,7 @@
 import { h, render } from "preact";
 
 import App from "./components/App";
+import "style.scss";
 
 const mountNode = document.getElementById("root");
 

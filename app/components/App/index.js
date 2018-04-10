@@ -1,11 +1,13 @@
 import { h } from "preact";
 
-import Hero from "../Hero";
+import About from "../About";
 import Navbar from "../Navbar";
+import Skills from "../Skills";
 
 export default () => (
   <div>
     <Navbar />
-    <Hero />
+    <About />
+    <Skills />
   </div>
 );

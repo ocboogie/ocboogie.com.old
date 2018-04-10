@@ -1,3 +1,5 @@
+const path = require("path");
+
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const merge = require("webpack-merge");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
@@ -28,7 +30,7 @@ module.exports = merge.smart(baseConfig, {
       },
       // Extract all .scss to style.css as is
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           publicPath: "./",
           use: [
