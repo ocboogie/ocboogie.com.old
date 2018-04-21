@@ -133,3 +133,11 @@ export default {
   border-radius: 50%;
 }
 </style>
+<style lang="scss">
+@media screen and (max-width: 768px) {
+  .VueCarousel-navigation-button {
+    visibility: hidden;
+    display: inline;
+  }
+}
+</style>
