@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "plugin:vue/essential",
+    "@vue/eslint-config-airbnb",
+    "@vue/eslint-config-prettier"
+  ],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", ["sibling", "parent"], "index"]
+      }
+    ]
+  },
+  "plugins": ["import", "prettier"]
+}
