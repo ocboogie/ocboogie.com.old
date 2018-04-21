@@ -1,7 +1,7 @@
 <template>
   <Section class="skills">
     <h1 class="title has-text-weight-light is-size-1">My skills</h1>
-    <Carousel :space-padding="50" :per-page="1" :navigation-enabled="true">
+    <Carousel :per-page="1" :navigation-enabled="true">
       <Slide v-for="(skillsList, skillsName) in skills" :key="skillsName">
         <h1 class="title">{{skillsName}}</h1>
         <div class="skills-container">
