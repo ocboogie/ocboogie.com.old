@@ -108,29 +108,29 @@ export default {
 .skills {
   background-color: #faaca8;
   background-image: linear-gradient(135deg, #faaca8 0%, #ddd6f3 100%);
-}
-.skills-container {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-.skill {
-  height: 100px;
-  width: 100px;
-  background-color: #fafafa;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  margin: 5px;
-  border-radius: 50%;
-}
-.logo-container {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
+  .skills-container {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .skill {
+      height: 100px;
+      width: 100px;
+      background-color: #fafafa;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      margin: 5px;
+      border-radius: 50%;
+      .logo-container {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
 }
 </style>
 <style lang="scss">
