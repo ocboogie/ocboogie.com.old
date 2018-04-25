@@ -1,29 +1,65 @@
 <template>
   <Section class="skills">
-    <h1 class="title has-text-weight-light is-size-1">My skills</h1>
-    <Carousel :per-page="1" :navigation-enabled="true">
-      <Slide v-for="(skillsList, skillsName) in skills" :key="skillsName">
-        <h1 class="title">{{skillsName}}</h1>
-        <div class="skills-container">
-          <a v-for="skill in skillsList" :href="skill.website" :key="skill.name" :data-tooltip="skill.name" class="skill tooltip">
-            <span :style="skill.containerStyle" class="logo-container">
-              <img :style="skill.style" :src="skill.logo" />
-            </span>
-          </a>
+    <h1 class="display-4">My skills</h1>
+    <div id="skillsCarouselControls" class="carousel slide" data-interval="false">
+      <ol class="carousel-indicators">
+        <li v-for="(skill, _, index) in skills" :key="skill.name" data-target="#skillsCarouselControls" :data-slide-to="index" :class="{active: index === 0}" />
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div :class="{active: index === 0}" class="carousel-item" v-for="(skillsList, skillsName, index) in skills" :key="skillsName">
+          <h1 class="title">{{skillsName}}</h1>
+          <div class="skills-container">
+            <a v-for="skill in skillsList" :href="skill.website" :key="skill.name" class="skill" data-toggle="tooltip" data-placement="top" :title="skill.name">
+              <span :style="skill.containerStyle" class="logo-container">
+                <img :style="skill.style" :src="skill.logo" />
+              </span>
+            </a>
+          </div>
         </div>
-      </Slide>
-    </Carousel>
+      </div>
+      <a class="carousel-control-prev" href="#skillsCarouselControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#skillsCarouselControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </Section>
 </template>
-
 <script>
-import { Carousel, Slide } from "vue-carousel";
+import $ from "jquery";
 
 import Section from "./Section.vue";
 
 export default {
+  mounted() {
+    this.tooltips = $('.skills [data-toggle="tooltip"]');
+    this.tooltips.tooltip();
+
+    // Update tooltips when sliding
+    $("#skillsCarouselControls").on("slide.bs.carousel", () => {
+      this.sliding = true;
+      this.updateTooltipsWhenSliding();
+    });
+    $("#skillsCarouselControls").on("slid.bs.carousel", () => {
+      this.sliding = false;
+    });
+  },
+  methods: {
+    updateTooltipsWhenSliding() {
+      if (!this.sliding) {
+        return;
+      }
+      this.tooltips.tooltip("update");
+      window.requestAnimationFrame(this.updateTooltipsWhenSliding);
+    }
+  },
   data() {
     return {
+      sliding: false,
+      tooltips: null,
       skills: {
         Languages: [
           {
@@ -97,9 +133,7 @@ export default {
     };
   },
   components: {
-    Section,
-    Carousel,
-    Slide
+    Section
   }
 };
 </script>
@@ -108,13 +142,18 @@ export default {
 .skills {
   background-color: #faaca8;
   background-image: linear-gradient(135deg, #faaca8 0%, #ddd6f3 100%);
+  .carousel-indicators {
+    bottom: -35px;
+  }
   .skills-container {
-    max-width: 500px;
-    margin: auto;
+    margin: 0 100px;
+    height: 250px;
+    width: 500px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     .skill {
+      overflow: hidden;
       height: 100px;
       width: 100px;
       background-color: #fafafa;
@@ -122,22 +161,18 @@ export default {
       margin: 5px;
       border-radius: 50%;
       .logo-container {
+        overflow: hidden;
         padding: 10px;
         display: flex;
         justify-content: center;
         height: 100%;
         width: 100%;
         border-radius: 50%;
+        img {
+          max-width: 100%;
+        }
       }
     }
-  }
-}
-</style>
-<style lang="scss">
-@media screen and (max-width: 768px) {
-  .VueCarousel-navigation-button {
-    visibility: hidden;
-    display: inline;
   }
 }
 </style>

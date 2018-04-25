@@ -1,9 +1,8 @@
 <template>
   <Section class="about">
-    <h1 class="title has-text-weight-light is-size-1">Eamon Mikulec</h1>
-    <h2 class="subtitle">
-      Frontend web developer
-    </h2>
+    <h1 class="display-2">Eamon Mikulec
+      <div class="subtitle">Frontend web developer</div>
+    </h1>
   </Section>
 </template>
 
@@ -21,5 +20,11 @@ export default {
 .about {
   background-color: #faaca8;
   background-image: linear-gradient(45deg, #faaca8 0%, #ddd6f3 100%);
+  .subtitle {
+    color: #4a4a4a;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.25;
+  }
 }
 </style>

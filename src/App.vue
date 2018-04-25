@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <Navbar />
-    <div v-scroll-spy="{time: 200, steps: 30}">
-      <About/>
-      <Skills/>
+    <Navbar/>
+    <div class="main container-fluid h-100">
+      <About id="about" />
+      <Skills id="skills" />
     </div>
   </div>
 </template>
 
 <script>
+import "bootstrap";
+import SmoothScroll from "smooth-scroll";
+
 import About from "./components/About.vue";
 import Navbar from "./components/Navbar.vue";
 import Skills from "./components/Skills.vue";
+
+SmoothScroll('a[href*="#"][data-scroll="true"]');
 
 export default {
   name: "app",
@@ -24,12 +29,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~bulma/sass/utilities/initial-variables";
-@import "~bulma/sass/utilities/functions";
-
-$navbar-height: 5rem;
-$navbar-item-active-background-color: darken($white, 3%);
-
-@import "~bulma";
-@import "~bulma-tooltip/dist/bulma-tooltip.sass";
+html,
+body,
+#app {
+  height: 100%;
+}
 </style>
+>

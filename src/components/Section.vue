@@ -1,16 +1,7 @@
 <template>
-  <div class="full-section">
-    <div class="has-text-centered">
-      <slot></slot>
+  <div class="h-100 row justify-content-center align-items-center text-center">
+    <div>
+      <slot/>
     </div>
   </div>
 </template>
-<style scoped lang="scss">
-.full-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 100vh;
-}
-</style>
