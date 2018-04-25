@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNavbar">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" id="mainNavbar">
     <div class="navbar-brand" href="#">
       <h2 class="title">
         Eamon Mikulec

@@ -10,9 +10,7 @@
           <h1 class="title">{{skillsName}}</h1>
           <div class="skills-container">
             <a v-for="skill in skillsList" :href="skill.website" :key="skill.name" class="skill" data-toggle="tooltip" data-placement="top" :title="skill.name">
-              <span :style="skill.containerStyle" class="logo-container">
-                <img :style="skill.style" :src="skill.logo" />
-              </span>
+              <img :style="skill.style" :src="skill.logo" />
             </a>
           </div>
         </div>
@@ -146,12 +144,17 @@ export default {
     bottom: -35px;
   }
   .skills-container {
-    margin: 0 100px;
-    height: 250px;
-    width: 500px;
-    display: flex;
-    justify-content: space-evenly;
+    max-width: 500px;
+    margin: 0 50px;
+    justify-content: center;
     flex-wrap: wrap;
+    display: flex;
+    @include media-breakpoint-up(sm) {
+      margin: 0 100px;
+      align-content: center;
+      height: 250px;
+      width: 500px;
+    }
     .skill {
       overflow: hidden;
       height: 100px;
@@ -160,17 +163,16 @@ export default {
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       margin: 5px;
       border-radius: 50%;
-      .logo-container {
-        overflow: hidden;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        img {
-          max-width: 100%;
-        }
+      overflow: hidden;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      img {
+        max-width: 100%;
+      }
+      @include media-breakpoint-up(sm) {
+        margin: 10px;
       }
     }
   }
