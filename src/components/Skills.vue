@@ -1,6 +1,6 @@
 <template>
   <Section class="skill-section">
-    <div class="skill-section-inner">
+    <div data-aos="fade-in" data-aos-anchor=".skill-section" data-aos-offset="500" class="skill-section-inner">
       <h1 class="display-4">My skills</h1>
       <div class="skills-container">
         <h1 class="title">Languages</h1>
