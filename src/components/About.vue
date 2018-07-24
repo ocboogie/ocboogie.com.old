@@ -1,6 +1,6 @@
 <template>
   <Section class="about">
-    <h1 class="display-2">Eamon Mikulec
+    <h1 data-aos="fade-up" data-aos-anchor=".about" data-aos-delay="100" class="display-2">Eamon Mikulec
       <div class="subtitle">Frontend web developer</div>
     </h1>
   </Section>
