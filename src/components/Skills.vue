@@ -75,13 +75,13 @@ export default {
         min-height: 200px;
         &.info-scale-enter-active,
         &.info-scale-leave-active {
-          transition: all 0.15s cubic-bezier(0.5, 0.25, 0, 0.5);
+          transition: all 0.25s cubic-bezier(0, 0, 0.25, 1);
           opacity: 1;
         }
         &.info-scale-enter,
         &.info-scale-leave-to {
           opacity: 0;
-          transform: scale(0.25, 0.35);
+          transform: scale(0.75, 0.8);
         }
       }
     }
