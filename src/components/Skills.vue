@@ -18,6 +18,7 @@
 import Section from "./Section.vue";
 import Skill from "./Skill.vue";
 import SkillInfo from "./SkillInfo.vue";
+import skills from "../skills";
 
 export default {
   methods: {
@@ -31,75 +32,7 @@ export default {
   data() {
     return {
       selectedSkill: null,
-      skills: [
-        {
-          name: "Rust",
-          logo: "https://cdn.svgporn.com/logos/rust.svg",
-          website: "http://www.rust-lang.org/"
-        },
-        {
-          name: "Node.js",
-          logo: "https://cdn.svgporn.com/logos/nodejs-icon.svg",
-          website: "https://nodejs.org/",
-          description: "Hello",
-          subskills: [
-            {
-              name: "React",
-              logo: "https://cdn.svgporn.com/logos/react.svg",
-              website: "https://reactjs.org/"
-            },
-            {
-              name: "Webpack",
-              logo: "https://cdn.svgporn.com/logos/webpack.svg",
-              website: "https://webpack.js.org/"
-            },
-            {
-              name: "Typescript",
-              logo: "https://cdn.svgporn.com/logos/typescript-icon.svg",
-              website: "https://www.typescriptlang.org/",
-              style: "border-radius: 50%"
-            },
-            {
-              name: "Babel",
-              logo: "https://cdn.svgporn.com/logos/babel.svg",
-              website: "https://babeljs.io/"
-            },
-            {
-              name: "Flow",
-              logo: "https://cdn.svgporn.com/logos/flow.svg",
-              website: "http://flowtype.org/"
-            },
-            {
-              name: "ReactiveX",
-              logo: "https://cdn.svgporn.com/logos/reactivex.svg",
-              website: "http://reactivex.io/"
-            },
-            {
-              name: "Vue",
-              logo: "https://cdn.svgporn.com/logos/vue.svg",
-              website: "https://vuejs.org/",
-              style: "margin-top: 10px;"
-            },
-            {
-              name: "Redux",
-              logo: "https://cdn.svgporn.com/logos/redux.svg",
-              website: "https://redux.js.org/",
-              style: "margin-bottom: 5px;"
-            }
-          ]
-        },
-        {
-          name: "Python",
-          logo: "https://cdn.svgporn.com/logos/python.svg",
-          website: "https://www.python.org/"
-        },
-        {
-          name: "Unity",
-          logo: "https://cdn.svgporn.com/logos/unity.svg",
-          website: "https://unity3d.com/",
-          style: "margin-right: 13px;"
-        }
-      ]
+      skills
     };
   },
   components: {

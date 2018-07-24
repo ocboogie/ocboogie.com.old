@@ -2,9 +2,7 @@
   <div class="skill-info">
     <span class="close" @click="$emit('close')">×</span>
     <h3 class="mb-3">{{name}}</h3>
-    <div>
-      {{description}}
-    </div>
+    <div v-html="description" />
     <template v-if="subskills">
       <hr>
       <div class="subskills">
