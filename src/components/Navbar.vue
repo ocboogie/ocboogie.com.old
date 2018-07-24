@@ -28,7 +28,9 @@
   padding-right: 0.5rem;
   .navbar-brand {
     padding-bottom: 0;
-    padding-right: 1rem;
+    @include media-breakpoint-up(sm) {
+      padding-right: 1rem;
+    }
     .subtitle {
       font-size: 1.25rem;
       font-weight: 400;
