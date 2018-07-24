@@ -1,15 +1,12 @@
 <template>
   <div id="app">
     <Navbar/>
-    <div class="main container-fluid h-100">
-      <About id="about" />
-      <Skills id="skills" />
-    </div>
+    <About id="about" />
+    <Skills id="skills" />
   </div>
 </template>
 
 <script>
-import "bootstrap";
 import SmoothScroll from "smooth-scroll";
 
 import About from "./components/About.vue";
@@ -34,5 +31,16 @@ body,
 #app {
   height: 100%;
 }
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: rgb(33, 37, 41);
+}
+
+.margin-none {
+  margin: 0 !important;
+}
 </style>
->

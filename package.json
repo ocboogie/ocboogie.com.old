@@ -9,9 +9,8 @@
   },
   "dependencies": {
     "aos": "3.0.0-beta.3",
-    "bootstrap": "^4.1.1",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.3",
+    "bulma": "^0.7.1",
+    "bulma-tooltip": "^2.0.1",
     "smooth-scroll": "^14.2.0",
     "vue": "^2.5.13"
   },
@@ -25,7 +24,7 @@
     "html-loader": "^0.5.5",
     "lint-staged": "^7.2.0",
     "markdown-loader": "^3.0.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
     "webpack-bundle-analyzer": "^2.13.1"
   },

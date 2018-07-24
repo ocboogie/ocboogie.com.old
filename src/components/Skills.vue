@@ -1,21 +1,22 @@
 <template>
-  <Section class="skill-section">
-    <div data-aos="fade-in" data-aos-anchor=".skill-section" data-aos-offset="500" class="skill-section-inner">
-      <h1 class="display-4">My skills</h1>
-      <div class="skills-container">
-        <h1 class="title">Languages</h1>
-        <div class="skills">
-          <skill v-for="(skill, index) in skills" @click.native="() => selectSkill(index)" :key="skill.name" :name="skill.name" :logo="skill.logo" :img-style="skill.style" />
+  <div class="hero is-fullheight skill-section">
+    <div class="hero-body" data-aos="fade-in" data-aos-anchor=".skill-section" data-aos-offset="500">
+      <div class="has-text-centered skill-section-inner">
+        <div class="section-title">My skills</div>
+        <div class="skills-container">
+          <h1 class="title is-2">Languages</h1>
+          <div class="skills">
+            <skill v-for="(skill, index) in skills" @click.native="() => selectSkill(index)" :key="skill.name" :name="skill.name" :logo="skill.logo" :img-style="skill.style" />
+          </div>
+          <transition name="info-scale">
+            <skill-info v-if="selectedSkill" class="skill-info" :name="selectedSkill.name" :description="selectedSkill.description" :subskills="selectedSkill.subskills" @close="closeInfo()" />
+          </transition>
         </div>
-        <transition name="info-scale">
-          <skill-info v-if="selectedSkill" class="skill-info" :name="selectedSkill.name" :description="selectedSkill.description" :subskills="selectedSkill.subskills" @close="closeInfo()" />
-        </transition>
       </div>
     </div>
-  </Section>
+  </div>
 </template>
 <script>
-import Section from "./Section.vue";
 import Skill from "./Skill.vue";
 import SkillInfo from "./SkillInfo.vue";
 import skills from "../skills";
@@ -36,7 +37,6 @@ export default {
     };
   },
   components: {
-    Section,
     Skill,
     SkillInfo
   }
@@ -52,6 +52,9 @@ export default {
     .skills-container {
       position: relative;
       width: 100%;
+      .title {
+        margin-bottom: 0.5rem;
+      }
       .skills {
         max-width: 500px;
         margin: auto;

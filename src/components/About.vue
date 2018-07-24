@@ -1,30 +1,25 @@
 <template>
-  <Section class="about">
-    <h1 data-aos="fade-up" data-aos-anchor=".about" data-aos-delay="100" class="display-2">Eamon Mikulec
-      <div class="subtitle">Frontend web developer</div>
-    </h1>
-  </Section>
+  <div class="hero is-fullheight about">
+    <div class="hero-body" data-aos="fade-up" data-aos-anchor=".about" data-aos-delay="100">
+      <div class="container has-text-centered">
+        <h1 class="title has-text-weight-light">Eamon Mikulec</h1>
+        <h2 class="subtitle">
+          Frontend web developer
+        </h2>
+      </div>
+    </div>
+  </div>
 </template>
-
-<script>
-import Section from "./Section.vue";
-
-export default {
-  components: {
-    Section
-  }
-};
-</script>
 
 <style lang="scss">
 .about {
   background-color: #faaca8;
   background-image: linear-gradient(45deg, #faaca8 0%, #ddd6f3 100%);
+  .title {
+    font-size: 5rem;
+  }
   .subtitle {
-    color: #4a4a4a;
     font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.25;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="skill-info">
     <span class="close" @click="$emit('close')">×</span>
-    <h3 class="mb-3">{{name}}</h3>
+    <div class="title">{{name}}</div>
     <div v-html="description" />
     <template v-if="subskills">
       <hr>
@@ -40,6 +40,9 @@ export default {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background-color: #fafafa;
   padding: 1rem;
+  .title {
+    margin-bottom: 1rem;
+  }
   .subskills {
     max-width: 500px;
     margin: auto;
