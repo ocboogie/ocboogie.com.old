@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+
 module.exports = {
   chainWebpack: config => {
     config.module
@@ -8,6 +11,9 @@ module.exports = {
       .end()
       .use("markdown-loader")
       .loader("markdown-loader");
+    if (process.env.ANALYZE) {
+      config.plugin("analyzer").use(BundleAnalyzerPlugin);
+    }
   },
   css: {
     loaderOptions: {
